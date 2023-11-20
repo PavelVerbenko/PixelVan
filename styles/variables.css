@@ -1,1 +1,10 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --background-color: #fff;
+  --background-color: #000;
+  --border-color: #00CC14;
+  --border-color: #00CC14;
+  --color: #00CC14;
+  --header-font: 'Press Start 2P';
+  --background-image: url(../images/cover-dark.png);
+}
