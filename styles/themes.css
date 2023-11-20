@@ -5,28 +5,22 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 
-
+:root.theme-light {
+  --background-color: #fff;
+  --bg-color: #d3d3d3;
+  --bg-color-start: #e7e7e7;
+    --bg-color-end: #1a1a1a;
+  --border-color: #000;
+  --color: #000;
+  --font-wh: 400;
+}
 
 :root.theme-dark {
   --background-color: #000;
+  --bg-color: #000;
+  --bg-color-start: #007f0c;
+  --bg-color-end: #004306;
   --border-color: #00CC14;
   --color: #00CC14;
-  --background-image: url(../images/cover-dark.png);
-}
-
-
-.theme-light {
-  --background-color: #fff;
-  --border-color: #000;
-  --color: #000;
-  --background-image: url(../images/cover-light.png);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background-color: #fff;
-    --border-color: #000;
-    --color: #000;
-    --background-image: url(../images/cover-light.png);
-  }
+  --font-wh: 400;
 }
