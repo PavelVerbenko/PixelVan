@@ -2,6 +2,7 @@
 :root {
   --header-font-family: "Press Start 2P";
   --main-font-family: "Inter", sans-serif;
+  --color-heart: #ff0000;
 }
 
 @media (prefers-color-scheme: light) {
