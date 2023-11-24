@@ -138,6 +138,13 @@
 /* section */
 .section {
   display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
   font-family: var(--main-font-family);
 }
 
@@ -172,7 +179,7 @@
 
 
 /* img  */
-.image-label {
+.img__label {
   position: absolute;
   right: 10px;
   top: 24px;
@@ -182,19 +189,28 @@
   text-shadow: none;
   -webkit-text-stroke: 1px var(--color);
   font-family: var(--header-font-family);
+  text-shadow: -1px 0 var(--color), 0 1px var(--color),
+    1px 0 var(--color), 0 -1px var(--color);
   mix-blend-mode: hard-light;
 }
 
 @supports (text-stroke: 1px var(--color)) or
   (-webkit-text-stroke: 1px var(--color)) {
-  .image-label {
+  .img__label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--color);
     text-stroke: 1px var(--color);
   }
 }
 
-.image__element {
+@media (width <= 375px) {
+  .img__label {
+    right: 10px;
+    top: 24px;
+  }
+}
+
+.img__element {
   overflow: hidden;
   position: relative;
   border-top: 2px solid var(--color);
@@ -271,7 +287,7 @@
   z-index: 1;
 }
 
-.like-icon .heart {
+.like-icon .heart__element {
   transition: fill 0.1s;
   transform-origin: center center;
 }
@@ -348,4 +364,10 @@
 
 .block__icon-button:focus-visible {
   outline: 2px solid var(--color);
+}
+
+
+/* фото в разных цветовах */
+.grayscale {
+  filter: grayscale(50%);
 }
