@@ -7,11 +7,12 @@
 
 :root.theme-light {
   --background-color: #fff;
-  --bg-color: #d3d3d3;
+  --bg-color: #ffffff;
   --bg-color-start: #e7e7e7;
   --bg-color-end: #1a1a1a;
   --border-color: #000;
   --color: #000;
+  --text-button-color: #ffffff;
   --font-wh: 400;
 }
 
@@ -22,5 +23,6 @@
   --bg-color-end: #004306;
   --border-color: #00cc14;
   --color: #00cc14;
+  --text-button-color: #00cc14;
   --font-wh: 400;
 }

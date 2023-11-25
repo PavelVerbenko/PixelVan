@@ -17,12 +17,12 @@
   animation: arrow-animation 0.5s ease-in-out infinite alternate;
 }
 
-.like-icon.is-liked .heart {
+.like__icon.is-liked .heart__element {
   animation: scale-animation 0.3s ease-in 0.1s 1 alternate;
 }
 
-.like-icon.is-liked .sparks {
-  animation: sparks-animation 0.3s ease-in 0.3s 1 alternate;
+.like__icon.is-liked .shines {
+  animation: shines-animation 0.3s ease-in 0.3s 1 alternate;
 }
 
 @keyframes arrow-animation {

@@ -3,7 +3,7 @@
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
+✦ like__icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ card__icon-button — для кнопки, оборачивающей иконку
@@ -13,6 +13,7 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
+
 .page {
   display: flex;
   flex-direction: column;
@@ -49,9 +50,9 @@
   align-items: center;
   border: 2px solid var(--border-color);
   background-color: var(--background-color);
-  margin-top: 100px;
+  margin: 100px 0px;
+  padding-top: 120px;
   text-transform: uppercase;
-  margin-bottom: 97px;
 }
 
 .title__header,
@@ -63,14 +64,10 @@
   line-height: normal;
 }
 
-.title__header {
-  padding-top: 120px;
-  padding-bottom: 20px;
-}
-
 .title__text {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   padding-bottom: 25px;
+  padding-top: 20px;
 }
 
 .title__header,
@@ -94,11 +91,27 @@
 
 /* buttons*/
 .theme-menu__button {
-  background-color: transparent;
+  padding: 0;
+  background: none;
   text-transform: uppercase;
+  opacity: 1;
+  transition: opacity 0.3s ease;
   cursor: pointer;
   border: none;
   overflow: hidden;
+}
+
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  left: -15px;
 }
 
 .theme-menu__button::before {
@@ -108,19 +121,18 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.theme-menu__button:disabled {
+.theme-menu__button::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color);
   opacity: 0.6;
-  pointer-events: none;
-}
-
-.theme-menu__button:disabled::before {
-  content: "▶";
-  position: absolute;
-  left: 2px;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
 }
 
 .theme-menu__button:hover {
-  color: var(--color);
   opacity: 0.6;
 }
 
@@ -130,10 +142,12 @@
 }
 
 .theme-menu__button:focus-visible {
-  border-bottom: 1px solid var(--color);
   opacity: 0.6;
 }
 
+.theme-menu__button:focus-visible::after {
+  transform: translateX(0);
+}
 
 /* section */
 .section {
@@ -152,7 +166,7 @@
 .block__car {
   width: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
   border: 2px solid var(--color);
-  background: var(--background-color); 
+  background: var(--background-color);
 }
 
 .title__text-block {
@@ -163,43 +177,36 @@
   font-style: normal;
 }
 
-.block__text {
-  font-weight: 400;
-  line-height: 21px;
-  font-size: 18px;
-}
-
 .block__text-container {
   display: flex;
   flex-direction: column;
   gap: 26px;
+  font-size: 18px;
   padding: 26px 25px;
   background: var(--background-color);
 }
 
-
 /* img  */
 .img__label {
-  position: absolute;
-  right: 10px;
-  top: 24px;
+  font-family: var(--header-font-family);
+  font-size: 14px;
+  font-weight: var(--font-wh);
   z-index: 1;
   opacity: 0.5;
-  font-size: 14px;
-  text-shadow: none;
-  -webkit-text-stroke: 1px var(--color);
-  font-family: var(--header-font-family);
-  text-shadow: -1px 0 var(--color), 0 1px var(--color),
-    1px 0 var(--color), 0 -1px var(--color);
   mix-blend-mode: hard-light;
+  text-shadow: -1px 0 var(--bg-color), 0 1px var(--bg-color), 1px 0 var(--bg-color),
+    0 -1px var(--bg-color);
+  position: absolute;
+  right: 25px;
+  top: 27px;
 }
 
-@supports (text-stroke: 1px var(--color)) or
-  (-webkit-text-stroke: 1px var(--color)) {
+@supports (text-stroke: 1px var(--bg-color)) or
+  (-webkit-text-stroke: 1px var(--bg-color)) {
   .img__label {
     text-shadow: none;
-    -webkit-text-stroke: 1px var(--color);
-    text-stroke: 1px var(--color);
+    -webkit-text-stroke: 1px var(--bg-color);
+    text-stroke: 1px var(--bg-color);
   }
 }
 
@@ -227,15 +234,15 @@
 
 /* button */
 .button {
-    font-family: var(--header-font-family);
-    font-size: 14px;
-    position: relative;
-    overflow: hidden;
-    color: var(--color);
-    background: none;
-    border: 2px solid var(--color);
-    cursor: pointer;
-    transition: 0.5s ease-in-out;
+  font-family: var(--header-font-family);
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-button-color);
+  background: none;
+  border: 2px solid var(--color);
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
 
 .button::before {
@@ -265,21 +272,17 @@
 }
 
 .button__text {
-  color: var(--color);
+  color: var(--text-button-color);
   mix-blend-mode: difference;
 }
-
-
 
 .like__button {
   width: 130px;
   padding: 10px 0;
-  
 }
 
-
-/* временно */
-.like-icon {
+/* сердце */
+.like__icon {
   width: inherit;
   height: inherit;
   fill: var(--color);
@@ -287,75 +290,73 @@
   z-index: 1;
 }
 
-.like-icon .heart__element {
-  transition: fill 0.1s;
+.like__icon .heart__element {
   transform-origin: center center;
+  transition: fill 0.1s;
 }
 
-.like-icon .contour {
+.like__icon .stroke {
   fill: var(--color);
 }
 
-.like-icon .main-body {
-  fill: var(--color);
+.like__icon .basic {
+  fill: var(--bg-color);
   transition: fill 0.3s linear;
 }
 
-.like-icon .core {
-  fill: var(--color);
+.like__icon .key {
+  fill: var(--bg-color);
   transition: fill 0.3s 0.05s;
 }
 
-.like-icon .sparks {
+.like__icon .shines {
   opacity: 0;
   fill: var(--color-heart);
 }
 
-.like-icon:hover .main-body {
+.like__icon:hover .basic {
   fill: var(--text-color);
 }
 
-.like-icon:hover .core {
+.like__icon:hover .key {
   fill: var(--color);
 }
 
-.like-icon:active .main-body {
+.like__icon:active .basic {
   fill: var(--color-heart);
 }
 
-.like-icon:active .core {
+.like__icon:active .key {
   fill: var(--color-heart);
 }
 
-.like-icon.is-liked .contour {
+.like__icon.is-liked .stroke {
   fill: var(--color-heart);
 }
 
-.like-icon.is-liked .main-body {
+.like__icon.is-liked .basic {
   fill: var(--color-heart);
 }
 
-.like-icon.is-liked .core {
+.like__icon.is-liked .key {
   fill: var(--color-heart);
 }
-
 
 /* кнопка  */
 .block__like-button-container {
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 16px;
+  gap: 6px;
 }
 
-
 .block__icon-button {
-  padding: 0;
-  width: 39px;
-  height: 36px;
   background: transparent;
   border: none;
   cursor: pointer;
+  padding: 0;
+  width: 39px;
+  height: 36px;
 }
 
 .block__icon-button:focus {
@@ -365,7 +366,6 @@
 .block__icon-button:focus-visible {
   outline: 2px solid var(--color);
 }
-
 
 /* фото в разных цветовах */
 .grayscale {

@@ -1,6 +1,6 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --header-font-family: "Press Start 2P";
+  --header-font-family: "Press Start 2P", fantasy;
   --main-font-family: "Inter", sans-serif;
   --color-heart: #ff0000;
 }
@@ -8,11 +8,12 @@
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: #fff;
-    --bg-color: #d3d3d3;
+    --bg-color: #ffffff;
     --bg-color-start: #e7e7e7;
     --bg-color-end: #1a1a1a;
     --border-color: #000;
     --color: #000;
+    --text-button-color: #ffffff;
     --font-wh: 400;
   }
 }
@@ -25,6 +26,7 @@
     --bg-color-end: #004306;
     --border-color: #00cc14;
     --color: #00cc14;
+    --text-button-color: #00cc14;
     --font-wh: 400;
   }
 }
