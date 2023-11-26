@@ -3,7 +3,7 @@
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
-✦ like__icon — для svg-иконки анимированного сердца
+✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ card__icon-button — для кнопки, оборачивающей иконку
@@ -112,13 +112,6 @@
   content: "▶";
   position: absolute;
   left: -15px;
-}
-
-.theme-menu__button::before {
-  position: absolute;
-  overflow: hidden;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
 }
 
 .theme-menu__button::after {
@@ -276,13 +269,13 @@
   mix-blend-mode: difference;
 }
 
-.like__button {
+.card__like-button {
   width: 130px;
   padding: 10px 0;
 }
 
 /* сердце */
-.like__icon {
+.like-icon {
   width: inherit;
   height: inherit;
   fill: var(--color);
@@ -290,67 +283,67 @@
   z-index: 1;
 }
 
-.like__icon .heart__element {
+.like-icon .heart__element {
   transform-origin: center center;
   transition: fill 0.1s;
 }
 
-.like__icon .stroke {
+.like-icon .contour {
   fill: var(--color);
 }
 
-.like__icon .basic {
+.like-icon .main-body {
   fill: var(--bg-color);
   transition: fill 0.3s linear;
 }
 
-.like__icon .key {
+.like-icon .core {
   fill: var(--bg-color);
   transition: fill 0.3s 0.05s;
 }
 
-.like__icon .shines {
+.like-icon .sparks {
   opacity: 0;
   fill: var(--color-heart);
 }
 
-.like__icon:hover .basic {
+.like-icon:hover .main-body {
   fill: var(--text-color);
 }
 
-.like__icon:hover .key {
+.like-icon:hover .core {
   fill: var(--color);
 }
 
-.like__icon:active .basic {
+.like-icon:active .main-body {
   fill: var(--color-heart);
 }
 
-.like__icon:active .key {
+.like-icon:active .core {
   fill: var(--color-heart);
 }
 
-.like__icon.is-liked .stroke {
+.like-icon.is-liked .contour {
   fill: var(--color-heart);
 }
 
-.like__icon.is-liked .basic {
+.like-icon.is-liked .main-body {
   fill: var(--color-heart);
 }
 
-.like__icon.is-liked .key {
+.like-icon.is-liked .core {
   fill: var(--color-heart);
 }
 
 /* кнопка  */
-.block__like-button-container {
+.card__like-button-container {
   display: flex;
   align-items: center;
   justify-content: end;
   gap: 6px;
 }
 
-.block__icon-button {
+.card__icon-button {
   background: transparent;
   border: none;
   cursor: pointer;
@@ -359,11 +352,11 @@
   height: 36px;
 }
 
-.block__icon-button:focus {
+.card__icon-button:focus {
   outline: none;
 }
 
-.block__icon-button:focus-visible {
+.card__icon-button:focus-visible {
   outline: 2px solid var(--color);
 }
 

@@ -17,22 +17,37 @@
   animation: arrow-animation 0.5s ease-in-out infinite alternate;
 }
 
-.like__icon.is-liked .heart__element {
+.like-icon.is-liked .heart {
   animation: scale-animation 0.3s ease-in 0.1s 1 alternate;
 }
 
-.like__icon.is-liked .shines {
-  animation: shines-animation 0.3s ease-in 0.3s 1 alternate;
+.like-icon.is-liked .sparks {
+  animation: sparks-animation 0.3s ease-in 0.3s 1 alternate;
 }
 
 @keyframes arrow-animation {
   from {
-    left: -0px;
+    left: -20px;
   }
   to {
-    left: -5px;
+    left: -16px;
   }
 }
 
+@keyframes scale-animation {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.5;
+  }
+}
 
-
+@keyframes sparks-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
