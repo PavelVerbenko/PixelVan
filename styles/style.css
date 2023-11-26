@@ -45,13 +45,15 @@
 .header {
   display: flex;
   width: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
+  height: clamp(20.1875rem, 19.2852rem + 3.8498vw, 22.75rem);
   font-family: var(--header-font-family);
   flex-direction: column;
   align-items: center;
   border: 2px solid var(--border-color);
   background-color: var(--background-color);
-  margin: 100px 0px;
-  padding-top: 120px;
+  margin-top: 102px;
+  margin-bottom: 104px;
+  padding-top: clamp(7.5rem, 7.1919rem + 1.3146vw, 8.375rem);
   text-transform: uppercase;
 }
 
@@ -146,7 +148,7 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: clamp(3.125rem, 3.037rem + 0.3756vw, 3.375rem);
 }
 
 .content {
@@ -283,7 +285,7 @@
   z-index: 1;
 }
 
-.like-icon .heart__element {
+.like-icon .heart {
   transform-origin: center center;
   transition: fill 0.1s;
 }
@@ -360,7 +362,133 @@
   outline: 2px solid var(--color);
 }
 
-/* фото в разных цветовах */
+/* фото в разных цветовах Фильтрах для изображений*/
 .grayscale {
-  filter: grayscale(50%);
+  filter: grayscale(70%);
+}
+
+.saturate {
+  filter: saturate(360%);
+}
+
+.hue-rotate {
+  filter: hue-rotate(30deg);
+}
+
+.invert {
+  filter: invert(80%);
+}
+
+.sepia {
+  filter: sepia(80%);
+}
+
+.blur {
+  filter: blur(20px);
+}
+
+.colorful {
+  filter: saturate(250%) hue-rotate(90deg) grayscale(20%) invert(25%) blur(2px);
+}
+
+
+.sv__btn {
+  padding: 15px 20px;
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: var(--bg-color);
+}
+
+@media (width <= 375px) {
+  .sv__btn {
+    flex-direction: column;
+  }
+}
+
+.ok__btn {
+  width: 100%;
+  padding: 10px 0;
+  text-transform: uppercase;
+}
+
+
+/* Всплывающие окно */
+
+.dialog {
+  font-family: var(--header-font-family);
+  font-size: 14px;
+  padding: 30px 26px;
+  color: var(--color);
+  background: var(--background-color);
+  border: 2px solid var(--color);
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dialog__container {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+@media (width <= 375px) {
+  .dialog__container {
+    gap: 28px;
+  }
+}
+
+.dialog__text {
+  text-transform: uppercase;
+  line-height: 1.5;
+  max-width: 234px;
+  width: 100%;
+}
+
+.dialog__text-container {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+
+.dialog:not([open]) {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (width <= 375px) {
+  .dialog__text {
+    width: 80%;
+  }
+}
+
+.dialog .floppy-image {
+  width: 39px;
+  height: 39px;
+  mix-blend-mode: normal;
+}
+
+@media (width <= 375px) {
+  .dialog {
+    padding: 32px 38px;
+  }
+}
+
+/* дискетка */
+.floppy-image {
+  width: 21px;
+  height: 21px;
+  mix-blend-mode: difference;
+}
+
+@media (width <= 375px) {
+  .floppy-image {
+    width: 28px;
+    height: 28px;
+  }
 }
