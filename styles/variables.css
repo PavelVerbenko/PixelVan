@@ -5,6 +5,8 @@
   --color-heart: #ff0000;
 }
 
+
+/* Всё работает так, когда убираю медиа от сюда, всё  перестает работать */
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: #fff;

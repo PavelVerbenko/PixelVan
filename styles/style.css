@@ -21,6 +21,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   color: var(--color);
+  background-attachment: fixed;
   background-image: repeating-linear-gradient(
       90deg,
       var(--bg-color),
@@ -148,7 +149,7 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: clamp(3.125rem, 3.037rem + 0.3756vw, 3.375rem);
+  gap: clamp(3.125rem, 3.015rem + 0.4695vw, 3.4375rem);
 }
 
 .content {
@@ -179,6 +180,11 @@
   font-size: 18px;
   padding: 26px 25px;
   background: var(--background-color);
+}
+
+.block__text {
+  line-height: 21px;
+  font-style: normal;
 }
 
 /* img  */
@@ -399,9 +405,10 @@
   gap: 8px;
   align-items: center;
   background: var(--bg-color);
+  margin-bottom: 102px;
 }
 
-@media (width <= 375px) {
+@media (width <= 376px) {
   .sv__btn {
     flex-direction: column;
   }
@@ -481,14 +488,15 @@
 
 /* дискетка */
 .floppy-image {
-  width: 21px;
-  height: 21px;
+  width: 28px;
+  height: 28px;
   mix-blend-mode: difference;
 }
 
-@media (width <= 375px) {
+
+@media (min-width: 376px) {
   .floppy-image {
-    width: 28px;
-    height: 28px;
+    width: 21px;
+    height: 21px;
   }
 }
