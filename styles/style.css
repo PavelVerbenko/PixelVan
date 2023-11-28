@@ -22,25 +22,7 @@
   min-block-size: 100dvb;
   color: var(--color);
   background-attachment: fixed;
-  background-image: repeating-linear-gradient(
-      90deg,
-      var(--bg-color),
-      var(--bg-color) 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    repeating-linear-gradient(
-      180deg,
-      var(--bg-color-start),
-      var(--bg-color-end) 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    repeating-linear-gradient(
-      180deg,
-      var(--bg-color-start) 0.01%,
-      var(--bg-color-end)
-    );
+  background-image: var(--bg);
 }
 
 .header {
@@ -146,7 +128,7 @@
 }
 
 /* section */
-.section {
+.content {
   display: flex;
   flex-direction: column;
   gap: clamp(3.125rem, 3.015rem + 0.4695vw, 3.4375rem);
@@ -434,6 +416,11 @@
 
 .dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.75);
+}
+
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
 }
 
 .dialog__container {
