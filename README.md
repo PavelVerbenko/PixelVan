@@ -1,3 +1,4 @@
-# zakrivayuschiy-teg-f
-Проект "Закрывающий тег"
+# PixelVan
+Проект "PixelVan"
+Адаптивный сайт с перключением фона, в зависимости от пользовательских настроек
 https://pavelverbenko.github.io/zakrivayuschiy-teg-f/
