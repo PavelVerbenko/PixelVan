@@ -2,4 +2,4 @@
 Проект "PixelVan"
 Адаптивный сайт с перключением фона,
 в зависимости от пользовательских настроек
-https://pavelverbenko.github.io/zakrivayuschiy-teg-f/
+https://pavelverbenko.github.io/PixelVan/
