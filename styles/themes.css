@@ -25,18 +25,12 @@
 
 :root.theme-dark {
   --background-color: #000;
-  --bg-color: #000;
-  --bg-color-start: #007f0c;
-  --bg-color-end: #004306;
-  --border-color: #00cc14;
-  --color: #00cc14;
-  --text-button-color: #00cc14;
-  --font-wh: 400;
-  --bg: 
-    repeating-linear-gradient( 90deg, 
-    var(--bg-color) 0px 2px, transparent 2px 4px ), 
-    repeating-linear-gradient(180deg, 
-    var(--bg-color) 0px 2px, transparent 2px 4px), 
-    linear-gradient(180deg, var(--bg-color-start) 0%,
-     var(--bg-color-end) 100%);
+    --bg-color: #000;
+    --bg-color-start: #0693e1;
+    --bg-color-end: #6c00ed;
+    --border-color: #ff00ff;
+    --color: #ff00ff;
+    --text-button-color: #ff00e5;
+    --font-wh: 400;
+    --bg: repeating-linear-gradient( 90deg, var(--bg-color) 0px 2px, transparent 2px 4px ), repeating-linear-gradient(180deg, var(--bg-color) 0px 2px, transparent 2px 4px), linear-gradient(180deg, var(--bg-color-start) 0%, var(--bg-color-end) 100%);
 }

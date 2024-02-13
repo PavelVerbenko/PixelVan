@@ -363,9 +363,9 @@
   filter: hue-rotate(30deg);
 }
 
-.invert {
+/* .invert {
   filter: invert(80%);
-}
+} */
 
 .sepia {
   filter: sepia(80%);
